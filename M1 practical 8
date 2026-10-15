@@ -1,0 +1,84 @@
+PRACTICAL NO-8
+
+Git Basics for Data Structure Projects: To use Git for version control in DS programs.
+
+a) Initialize repository using git init. 
+
+Create a Project Folder
+
+ Step 1:-
+
+Create a folder on your Desktop.
+Example:
+DS_Project
+Inside the folder, create a simple Python program.
+Example:
+stack.py
+
+Step 2:-
+
+Open the Folder in VS Code
+Open VS Code. 
+Click File → Open Folder. 
+Select DS_Project. 
+
+Step 3:-
+
+Open the Terminal
+Click
+Terminal
+Step-1 
+git init
+Press Enter.
+
+Output:-
+
+b) Add and commit DS programs (git add, git commit). 
+
+Step 1:-
+
+Add the file
+git add stack.py
+
+Step 2:-
+
+git commit -m "Added Stack Program"
+
+Output:-
+
+c) Create and switch branches (git branch, git checkout). 
+
+Step 1:- 
+
+Create a new branch:
+git branch tree
+
+Step 2:-
+
+git checkout tree
+
+Output:-
+
+d) Merge branches and resolve conflicts. 
+
+Step 1:-
+
+Return to the main branch:
+git checkout main
+
+Step 2:- 
+
+Merge the tree branch:
+git merge tree
+
+Output:-
+
+e) Push project to remote repository (git push).
+
+Step 1:-
+
+First create a repository on GitHub.
+Example:
+DS_Project
+
+Output:-
