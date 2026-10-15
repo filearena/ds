@@ -1,0 +1,117 @@
+PRACTICAL NO:-7
+
+Hashing Techniques: 
+
+To implement hashing and collision resolution techniques.
+
+A) Implement Hash Table Using Division Method
+
+Input:-
+
+( Formula:- 
+Hash Function = Key % Table Size ) 
+# Hash Table using Division Method
+
+size = 10
+hash_table = [None] * size
+
+def insert(key):
+    index = key % size
+    hash_table[index] = key
+    print(key, "inserted at index", index)
+
+# Main Program
+insert(25)
+insert(36)
+insert(18)
+insert(47)
+
+print("Hash Table:")
+print(hash_table)
+
+Output:-
+
+7(b). Handle Collisions Using Linear Probing
+
+Input:-
+
+# Linear Probing
+
+size = 10
+hash_table = [None] * size
+
+def insert(key):
+
+    index = key % size
+
+    while hash_table[index] is not None:
+        index = (index + 1) % size
+
+    hash_table[index] = key
+
+    print(key, "inserted at index", index)
+
+# Main Program
+insert(25)
+insert(35)
+insert(45)
+
+print("Hash Table:")
+print(hash_table)
+
+Output:-
+
+c). Implement Chaining Method
+
+Input:-
+
+# Chaining Method
+
+size = 10
+
+hash_table = []
+
+for i in range(size):
+    hash_table.append([])
+
+def insert(key):
+
+    index = key % size
+
+    hash_table[index].append(key)
+
+    print(key, "inserted at index", index)
+
+# Main Program
+insert(25)
+insert(35)
+insert(45)
+
+print("Hash Table")
+
+for i in range(size):
+    print(i, ":", hash_table[i])
+
+Output:-
+
+(d). Compare Performance of Hashing Techniques
+
+Input:-
+
+# Comparison of Hashing Techniques
+
+print("Comparison of Hashing Techniques\n")
+
+print("1. Division Method")
+print("- Uses index = key % table_size")
+print("- Fast when collisions are few.\n")
+
+print("2. Linear Probing")
+print("- Stores collided element in next empty location.")
+print("- Simple but causes clustering.\n")
+
+print("3. Chaining")
+print("- Stores collided elements in a linked list (or list).")
+print("- Better when many collisions occur.\n")
+
+Output:-
