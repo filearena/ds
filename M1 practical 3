@@ -1,0 +1,176 @@
+Practical No:-3
+
+Aim:- 3(a). Implement Simple Queue Using Array (Enqueue & Dequeue)
+
+Input:-
+
+# Simple Queue using Array
+
+queue = []
+
+# Enqueue
+def enqueue(item):
+    queue.append(item)
+    print(item, "inserted into queue")
+
+# Dequeue
+def dequeue():
+    if len(queue) == 0:
+        print("Queue Underflow")
+    else:
+        print(queue.pop(0), "deleted from queue")
+
+# Display
+def display():
+    if len(queue) == 0:
+        print("Queue is Empty")
+    else:
+        print("Queue Elements:", queue)
+
+# Main Program
+enqueue(10)
+enqueue(20)
+enqueue(30)
+
+display()
+
+dequeue()
+
+display()
+
+Output:-
+
+b)  Queue Using Array (Overflow and Underflow)
+
+Input:-
+
+# Queue Overflow and Underflow
+
+MAX = 5
+queue = []
+
+def enqueue(item):
+    if len(queue) == MAX:
+        print("Queue Overflow")
+    else:
+        queue.append(item)
+        print(item, "inserted")
+
+def dequeue():
+    if len(queue) == 0:
+        print("Queue Underflow")
+    else:
+        print(queue.pop(0), "deleted")
+
+def display():
+    print(queue)
+
+enqueue(10)
+enqueue(20)
+enqueue(30)
+enqueue(40)
+enqueue(50)
+enqueue(60)      # Overflow
+
+display()
+
+dequeue()
+dequeue()
+dequeue()
+dequeue()
+dequeue()
+dequeue()        # Underflow
+
+Output:-
+
+c) Implement Circular Queue
+
+Input:-
+
+# Circular Queue
+
+SIZE = 5
+queue = [None] * SIZE
+
+front = -1
+rear = -1
+
+def enqueue(item):
+    global front, rear
+
+    if (rear + 1) % SIZE == front:
+        print("Queue Overflow")
+
+    elif front == -1:
+        front = rear = 0
+        queue[rear] = item
+
+    else:
+        rear = (rear + 1) % SIZE
+        queue[rear] = item
+
+def dequeue():
+    global front, rear
+
+    if front == -1:
+        print("Queue Underflow")
+
+    else:
+        print(queue[front], "deleted")
+
+        if front == rear:
+            front = rear = -1
+        else:
+            front = (front + 1) % SIZE
+
+def display():
+
+    if front == -1:
+        print("Queue Empty")
+        return
+
+    i = front
+
+    while True:
+        print(queue[i], end=" ")
+
+        if i == rear:
+            break
+
+        i = (i + 1) % SIZE
+
+    print()
+
+enqueue(10)
+enqueue(20)
+enqueue(30)
+enqueue(40)
+enqueue(50)
+
+display()
+
+dequeue()
+
+display()
+
+enqueue(60)
+
+display()
+
+Output:-
+
+d) Display Queue Elements
+
+Input:-
+
+# Display Queue Elements
+
+queue = [10,20,30,40]
+
+print("Queue Elements are:")
+
+for i in queue:
+    print(i)
+
+output:-
+ 
