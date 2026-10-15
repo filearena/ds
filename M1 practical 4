@@ -1,0 +1,184 @@
+Practical No:- 4
+
+Queue Using Linked List & Applications:
+
+Aim:-
+a) Implement queue using linked list.
+
+Input:-
+
+# Queue using Linked List
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class Queue:
+    def __init__(self):
+        self.front = None
+        self.rear = None
+
+    def enqueue(self, data):
+        new_node = Node(data)
+
+        if self.rear is None:
+            self.front = self.rear = new_node
+        else:
+            self.rear.next = new_node
+            self.rear = new_node
+
+        print(data, "inserted")
+
+    def dequeue(self):
+        if self.front is None:
+            print("Queue Underflow")
+        else:
+            print(self.front.data, "deleted")
+            self.front = self.front.next
+
+            if self.front is None:
+                self.rear = None
+
+    def display(self):
+        if self.front is None:
+            print("Queue is Empty")
+        else:
+            temp = self.front
+            print("Queue Elements:")
+            while temp:
+                print(temp.data)
+                temp = temp.next
+
+# Main Program
+q = Queue()
+
+q.enqueue(10)
+q.enqueue(20)
+q.enqueue(30)
+
+q.display()
+
+q.dequeue()
+
+q.display()
+
+Output:-
+
+b) Implement priority queue.
+
+Input:- 
+
+# Priority Queue
+
+queue = []
+
+def insert(data, priority):
+    queue.append((priority, data))
+    queue.sort()
+
+def delete():
+    if len(queue) == 0:
+        print("Priority Queue is Empty")
+    else:
+        item = queue.pop(0)
+        print("Deleted:", item)
+
+def display():
+    print("Priority Queue:")
+    for item in queue:
+        print(item)
+
+# Main Program
+insert("A", 2)
+insert("B", 1)
+insert("C", 3)
+
+display()
+
+delete()
+
+display()
+
+output:-
+
+c) Simulate CPU scheduling (basic FIFO concept).
+
+Input:-
+
+# CPU Scheduling using FIFO
+
+queue = []
+
+queue.append("P1")
+queue.append("P2")
+queue.append("P3")
+queue.append("P4")
+
+print("CPU Execution Order:")
+
+while len(queue) > 0:
+    process = queue.pop(0)
+    print(process, "Executed")
+
+Output:-
+
+d) Compare simple queue and circular queue.
+SIZE = 5
+
+Input:-
+
+# ---------- Simple Queue ----------
+simple = []
+
+print("Simple Queue")
+
+# Enqueue
+simple.append(10)
+simple.append(20)
+simple.append(30)
+simple.append(40)
+simple.append(50)
+
+print("Queue:", simple)
+
+# Dequeue two elements
+simple.pop(0)
+simple.pop(0)
+
+print("After deleting two elements:", simple)
+
+print("Rear has reached the end.")
+print("In a Simple Queue, the empty spaces at the front cannot be reused.")
+print()
+
+# ---------- Circular Queue ----------
+
+print("Circular Queue")
+
+queue = [None] * SIZE
+front = 0
+rear = 4
+
+queue[0] = 10
+queue[1] = 20
+queue[2] = 30
+queue[3] = 40
+queue[4] = 50
+
+print("Queue:", queue)
+
+# Delete two elements
+front = (front + 1) % SIZE
+front = (front + 1) % SIZE
+
+# Insert new elements in freed positions
+rear = (rear + 1) % SIZE
+queue[rear] = 60
+
+rear = (rear + 1) % SIZE
+queue[rear] = 70
+
+print("Queue after reuse:", queue)
+
+Output:-
