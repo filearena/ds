@@ -1,0 +1,243 @@
+Practial No-02
+
+Stack Implementation Using Linked List & Applications
+
+ To implement stack using linked list and solve stack applications. 
+
+a) Implement stack using singly linked list.
+
+Input :- 
+
+# Stack Implementation using Singly Linked List
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class Stack:
+    def __init__(self):
+        self.top = None
+
+    # Push Operation
+    def push(self, data):
+        new_node = Node(data)
+        new_node.next = self.top
+        self.top = new_node
+        print(data, "pushed into stack.")
+
+    # Pop Operation
+    def pop(self):
+        if self.top is None:
+            print("Stack Underflow")
+        else:
+            temp = self.top
+            self.top = self.top.next
+            print(temp.data, "popped from stack.")
+
+    # Display Stack
+    def display(self):
+        if self.top is None:
+            print("Stack is Empty")
+        else:
+            temp = self.top
+            print("Stack Elements:")
+            while temp:
+                print(temp.data)
+                temp = temp.next
+
+# Main Program
+s = Stack()
+
+s.push(10)
+s.push(20)
+s.push(30)
+
+s.display()
+
+s.pop()
+
+s.display()
+
+Output :- 
+
+
+b) Convert infix expression to postfix. 
+
+Input :- 
+
+# Infix to Postfix Conversion
+
+def precedence(op):
+    if op == '+' or op == '-':
+        return 1
+    elif op == '*' or op == '/':
+        return 2
+    elif op == '^':
+        return 3
+    return 0
+
+def infix_to_postfix(expression):
+    stack = []
+    postfix = ""
+
+    for ch in expression:
+        if ch.isalnum():
+            postfix += ch
+
+        elif ch == '(':
+            stack.append(ch)
+
+        elif ch == ')':
+            while stack and stack[-1] != '(':
+                postfix += stack.pop()
+            stack.pop()
+
+        else:
+            while stack and precedence(ch) <= precedence(stack[-1]):
+                postfix += stack.pop()
+            stack.append(ch)
+
+    while stack:
+        postfix += stack.pop()
+
+    return postfix
+
+expr = input("Enter Infix Expression: ")
+
+print("Postfix Expression:", infix_to_postfix(expr))
+
+Output :-
+
+c) Evaluate postfix expression. 
+
+Input :- 
+
+# Evaluate Postfix Expression
+
+stack = []
+
+postfix = input("Enter Postfix Expression (e.g., 23+5*): ")
+
+for ch in postfix:
+
+    if ch.isdigit():
+        stack.append(int(ch))
+
+    else:
+        b = stack.pop()
+        a = stack.pop()
+
+        if ch == '+':
+            stack.append(a + b)
+
+        elif ch == '-':
+            stack.append(a - b)
+
+        elif ch == '*':
+            stack.append(a * b)
+
+        elif ch == '/':
+            stack.append(a / b)
+
+print("Result =", stack.pop())
+
+Output :- 
+
+-----?
+
+Input :- 23+5*
+
+Step 1
+Read 2
+
+Stack
+-----
+| 2 |
+-----
+
+Step 2
+Read 3
+
+Stack
+-----
+| 3 |
+| 2 |
+-----
+
+Step 3
+Read +
+
+Pop 3
+Pop 2
+
+2 + 3 = 5
+
+Push 5
+
+Stack
+-----
+| 5 |
+-----
+
+Step 4
+Read 5
+
+Stack
+-----
+| 5 |
+| 5 |
+-----
+
+Step 5
+Read *
+
+Pop 5
+Pop 5
+
+5 × 5 = 25
+
+Push 25
+
+Stack
+------
+| 25 |
+------
+
+Output :-
+
+Result = 25
+
+d) Check balanced parentheses using stack.
+
+Input :- 
+
+# Check Balanced Parentheses
+
+def check_balance(expression):
+
+    stack = []
+
+    for ch in expression:
+
+        if ch == '(':
+            stack.append(ch)
+
+        elif ch == ')':
+
+            if len(stack) == 0:
+                return "Not Balanced"
+
+            stack.pop()
+
+    if len(stack) == 0:
+        return "Balanced"
+
+    return "Not Balanced"
+
+expr = input("Enter Expression: ")
+
+print(check_balance(expr))
+
+Output :-
+
