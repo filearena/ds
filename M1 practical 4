@@ -3,6 +3,13 @@ Practical No:- 4
 Queue Using Linked List & Applications:
 
 Aim:-
+
+a) Implement queue using linked list.
+b) Implement priority queue.
+c) Simulate CPU scheduling (basic FIFO concept).
+d) Compare simple queue and circular queue.
+SIZE = 5
+
 a) Implement queue using linked list.
 
 Input:-
