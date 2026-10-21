@@ -5,6 +5,11 @@ Stack Implementation Using Linked List & Applications
  To implement stack using linked list and solve stack applications. 
 
 a) Implement stack using singly linked list.
+b) Convert infix expression to postfix. 
+c) Evaluate postfix expression. 
+d) Check balanced parentheses using stack.
+
+a) Implement stack using singly linked list.
 
 Input :- 
 
