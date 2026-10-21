@@ -5,6 +5,11 @@ Binary Search Tree (BST):
 To implement Binary Search Tree operations
 
 a) Insert nodes into BST. 
+b) Search element in BST. 
+c) Delete a node from BST. 
+d) Find height and count total nodes.
+
+a) Insert nodes into BST. 
 
 Input:-
 
