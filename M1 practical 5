@@ -3,6 +3,11 @@ PRACTICAL NO:-5
 Tree Traversal Techniques: To implement tree operations and traversal.
 
 a) Create a binary tree. 
+b) Implement preorder traversal. 
+c) Implement inorder traversal. 
+d) Implement postorder traversal.
+
+a) Create a binary tree. 
 
 Input:-
 
