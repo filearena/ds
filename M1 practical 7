@@ -5,6 +5,11 @@ Hashing Techniques:
 To implement hashing and collision resolution techniques.
 
 A) Implement Hash Table Using Division Method
+b). Handle Collisions Using Linear Probing
+c). Implement Chaining Method
+d). Compare Performance of Hashing Techniques
+
+A) Implement Hash Table Using Division Method
 
 Input:-
 
