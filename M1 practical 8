@@ -2,6 +2,12 @@ PRACTICAL NO-8
 
 Git Basics for Data Structure Projects: To use Git for version control in DS programs.
 
+a) Initialize repository using git init.
+b) Add and commit DS programs (git add, git commit). 
+c) Create and switch branches (git branch, git checkout). 
+d) Merge branches and resolve conflicts. 
+e) Push project to remote repository (git push).
+
 a) Initialize repository using git init. 
 
 Create a Project Folder
