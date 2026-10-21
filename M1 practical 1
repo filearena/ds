@@ -5,6 +5,11 @@ Stack Implementation Using Array
 Aim:- To implement stack operations using array. 
 
 a) Implement stack with push and pop operations.
+b) Implement peek and display functions.
+c) Check overflow and underflow conditions.
+d) Demonstrate stack using menu-driven program.
+
+a) Implement stack with push and pop operations.
 
 Input:-
 
