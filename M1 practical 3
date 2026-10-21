@@ -1,6 +1,13 @@
 Practical No:-3
 
-Aim:- 3(a). Implement Simple Queue Using Array (Enqueue & Dequeue)
+Aim:- 
+
+a). Implement Simple Queue Using Array (Enqueue & Dequeue)
+b)  Queue Using Array (Overflow and Underflow)
+c) Implement Circular Queue
+d) Display Queue Elements
+
+3(a). Implement Simple Queue Using Array (Enqueue & Dequeue)
 
 Input:-
 
